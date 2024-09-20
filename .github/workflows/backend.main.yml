@@ -8,13 +8,14 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_NAME: GetCVCounter  # Set this to your Azure Function App name
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend/api'   # Path to your Function App project
-  DOTNET_VERSION: '6.0.x'                   # Set this to the .NET version to use
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend/api'   # Path to your Azure Function App project
+  DOTNET_VERSION: '6.0.x'  # Set this to the .NET version you're using
 
 jobs:
   build-and-deploy:
     runs-on: windows-latest
     environment: dev
+
     steps:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v3
@@ -22,7 +23,7 @@ jobs:
       - name: 'Login via Azure CLI'
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}  # Use your GitHub secret for Azure credentials
+          creds: ${{ secrets.AZURE_CREDENTIALS }}  # This uses the correct secret you've added
 
       - name: 'Setup DotNet ${{ env.DOTNET_VERSION }} Environment'
         uses: actions/setup-dotnet@v3
@@ -39,7 +40,7 @@ jobs:
       - name: 'Run Unit Tests'
         shell: pwsh
         run: |
-          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/../tests'  # Adjust path for the tests directory
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/../tests'  # Adjust path if needed
           dotnet test
 
       - name: 'Deploy Azure Functions App'
