@@ -263,7 +263,7 @@ paket-files/
 __pycache__/
 *.pyc
 # Ignore local settings for Azure Functions
-backend/api/local.settings.json
+**/local.settings.json
 
 # Ignore macOS system files
 .DS_Store

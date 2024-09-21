@@ -1,0 +1,485 @@
+Last login: Fri Sep 20 13:39:50 on ttys014
+aishxaaax@MacBook-Pro azurecv % git rm --cached backend/api/local.settings.json
+fatal: pathspec 'backend/api/local.settings.json' did not match any files
+aishxaaax@MacBook-Pro azurecv % find . -name "local.settings.json"
+./backend/tests/bin/Debug/net8.0/local.settings.json
+./backend/api/bin/output/local.settings.json
+./backend/api/bin/Release/net6.0/local.settings.json
+./backend/api/bin/Debug/net6.0/local.settings.json
+./backend/api/local.settings.json
+aishxaaax@MacBook-Pro azurecv % git rm --cached ./backend/tests/bin/Debug/net8.0/local.settings.json
+git rm --cached ./backend/api/bin/output/local.settings.json
+git rm --cached ./backend/api/bin/Release/net6.0/local.settings.json
+git rm --cached ./backend/api/bin/Debug/net6.0/local.settings.json
+git rm --cached ./backend/api/local.settings.json
+
+rm 'backend/tests/bin/Debug/net8.0/local.settings.json'
+fatal: pathspec './backend/api/bin/output/local.settings.json' did not match any files
+fatal: pathspec './backend/api/bin/Release/net6.0/local.settings.json' did not match any files
+fatal: pathspec './backend/api/bin/Debug/net6.0/local.settings.json' did not match any files
+fatal: pathspec './backend/api/local.settings.json' did not match any files
+aishxaaax@MacBook-Pro azurecv % git status
+
+On branch main
+Your branch is ahead of 'origin/main' by 6 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    backend/tests/bin/Debug/net8.0/local.settings.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	backend/tests/bin/Debug/net8.0/local.settings.json
+
+aishxaaax@MacBook-Pro azurecv % echo "**/local.settings.json" >> .gitignore
+
+aishxaaax@MacBook-Pro azurecv % echo "**/local.settings.json" >> .gitignore
+
+aishxaaax@MacBook-Pro azurecv % git add .gitignore
+git commit -m "Update .gitignore to ignore local.settings.json"
+git push
+
+[main 8aaa5d3] Update .gitignore to ignore local.settings.json
+ 2 files changed, 2 insertions(+), 12 deletions(-)
+ create mode 100644 .gitignore
+ delete mode 100644 backend/tests/bin/Debug/net8.0/local.settings.json
+Enumerating objects: 329, done.
+Counting objects: 100% (329/329), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (308/308), done.
+Writing objects: 100% (319/319), 12.58 MiB | 2.35 MiB/s, done.
+Total 319 (delta 129), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (129/129), completed with 4 local objects.
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+remote: 
+remote: - GITHUB PUSH PROTECTION
+remote:   —————————————————————————————————————————
+remote:     Resolve the following violations before pushing again
+remote: 
+remote:     - Push cannot contain secrets
+remote: 
+remote:     
+remote:      (?) Learn how to resolve a blocked push
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+remote:     
+remote:     
+remote:       —— Azure Cosmosdb Key Identifiable ———————————————————
+remote:        locations:
+remote:          - commit: 4265cf4e71ef8088ee2be7e25e705822cec7866f
+remote:            path: backend/tests/bin/Debug/net8.0/local.settings.json:6
+remote:     
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/AishaS992/azurecv/security/secret-scanning/unblock-secret/2mKl5g4PXeEyboaNhuBYyYq4uZc
+remote:     
+remote: 
+remote: 
+To github.com:AishaS992/azurecv.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'github.com:AishaS992/azurecv.git'
+aishxaaax@MacBook-Pro azurecv % az ad sp list --query "[].{displayName:displayName, appId:appId}"
+
+The result is not complete. You can still use '--all' to get all of them with long latency expected, or provide a filter through command arguments
+[
+  {
+    "appId": "f2c304cf-8e7e-4c3f-8164-16299ad9d272",
+    "displayName": "Azure Management Groups"
+  },
+  {
+    "appId": "92b61450-2139-4e4a-a0cc-898eced7a779",
+    "displayName": "Afdx Resource Provider"
+  },
+  {
+    "appId": "a303894e-f1d8-4a37-bf10-67aa654a0596",
+    "displayName": "Compute Usage Provider"
+  },
+  {
+    "appId": "8e0e8db5-b713-4e91-98e6-470fed0aa4c2",
+    "displayName": "Microsoft Azure Signup Portal"
+  },
+  {
+    "appId": "b9a92e36-2cf8-4f4e-bcb3-9d99e00e14ab",
+    "displayName": "Compute Recommendation Service"
+  },
+  {
+    "appId": "035f9e1d-4f00-4419-bf50-bf2d87eb4878",
+    "displayName": "Azure Monitor Restricted"
+  },
+  {
+    "appId": "6a0ec4d3-30cb-4a83-91c0-ae56bc0e3d26",
+    "displayName": "Azure Container Registry"
+  },
+  {
+    "appId": "60b2e7d5-a27f-426d-a6b1-acced0846fdf",
+    "displayName": "Microsoft Azure IPAM"
+  },
+  {
+    "appId": "c39c9bac-9d1f-4dfb-aa29-27f6365e5cb7",
+    "displayName": "Azure Advisor"
+  },
+  {
+    "appId": "3603eff4-9141-41d5-ba8f-02fb3a439cd6",
+    "displayName": "Diagnostic Services Data Access"
+  },
+  {
+    "appId": "44b7b882-eb46-485c-9c78-686f6b67b176",
+    "displayName": "AML Registries"
+  },
+  {
+    "appId": "a6aa9161-5291-40bb-8c5c-923b567bee3b",
+    "displayName": "Storage Resource Provider"
+  },
+  {
+    "appId": "60e6cd67-9c8c-4951-9b3c-23c25a2169af",
+    "displayName": "Managed Disks Resource Provider"
+  },
+  {
+    "appId": "8fca0a66-c008-4564-a876-ab3ae0fd5cff",
+    "displayName": "Microsoft.SMIT"
+  },
+  {
+    "appId": "5861f7fb-5582-4c1a-83c0-fc5ffdb531a6",
+    "displayName": "Azure RBAC Data Plane"
+  },
+  {
+    "appId": "1e3e4475-288f-4018-a376-df66fd7fac5f",
+    "displayName": "NetworkTrafficAnalyticsService"
+  },
+  {
+    "appId": "d2fa1650-4805-4a83-bcb9-cf41fe63539c",
+    "displayName": "ACR-Tasks-Prod"
+  },
+  {
+    "appId": "e933bd07-d2ee-4f1d-933c-3752b819567b",
+    "displayName": "Azure Monitor Control Service"
+  },
+  {
+    "appId": "184909ca-69f1-4368-a6a7-c558ee6eb0bd",
+    "displayName": "Marketplace Caps API"
+  },
+  {
+    "appId": "38808189-fa7a-4d8a-807f-eba01edacca6",
+    "displayName": "AzNet Security Guard"
+  },
+  {
+    "appId": "63ea3c01-7483-456e-8073-d3fed34fbdda",
+    "displayName": "Azure Container Scale Sets - CS2"
+  },
+  {
+    "appId": "7c33bfcb-8d33-48d6-8e60-dc6404003489",
+    "displayName": "Network Watcher"
+  },
+  {
+    "appId": "a8b6bf88-1d1a-4626-b040-9a729ea93c65",
+    "displayName": "Compute Artifacts Publishing Service"
+  },
+  {
+    "appId": "ce6ff14a-7fdc-4685-bbe0-f6afdfcfa8e0",
+    "displayName": "Azure Linux VM Sign-In"
+  },
+  {
+    "appId": "c5b17a4f-cc6f-4649-9480-684280a2af3a",
+    "displayName": "aciapi"
+  },
+  {
+    "appId": "a57aca87-cbc0-4f3c-8b9e-dc095fdc8978",
+    "displayName": "IAM Supportability"
+  },
+  {
+    "appId": "e406a681-f3d4-42a8-90b6-c2b029497af1",
+    "displayName": "Azure Storage"
+  },
+  {
+    "appId": "6bccf540-eb86-4037-af03-7fa058c2db75",
+    "displayName": "Geneva Alert RP"
+  },
+  {
+    "appId": "797f4846-ba00-4fd7-ba43-dac1f8f63013",
+    "displayName": "Windows Azure Service Management API"
+  },
+  {
+    "appId": "61c50b89-703d-431d-8d80-1e8618748775",
+    "displayName": "Azure Machine Learning OpenAI"
+  },
+  {
+    "appId": "f6b60513-f290-450e-a2f3-9930de61c5e7",
+    "displayName": "Microsoft Azure Log Search Alerts"
+  },
+  {
+    "appId": "6608bce8-e060-4e82-bfd2-67ed4f60262f",
+    "displayName": "AML Inferencing Frontdoor"
+  },
+  {
+    "appId": "a0be0c72-870e-46f0-9c49-c98333a996f7",
+    "displayName": "AzureDnsFrontendApp"
+  },
+  {
+    "appId": "0469d4cd-df37-4d93-8a61-f8c75b809164",
+    "displayName": "Policy Administration Service"
+  },
+  {
+    "appId": "40c49ff3-c6ae-436d-b28e-b8e268841980",
+    "displayName": "Microsoft Azure Network Copilot"
+  },
+  {
+    "appId": "62c559cd-db0c-4da0-bab2-972528c65d42",
+    "displayName": "ACR-Tasks-Network"
+  },
+  {
+    "appId": "5da7367f-09c8-493e-8fd4-638089cddec3",
+    "displayName": "CABProvisioning"
+  },
+  {
+    "appId": "6e02f8e9-db9b-4eb5-aa5a-7c8968375f68",
+    "displayName": "Microsoft Azure Vnet Verifier"
+  },
+  {
+    "appId": "a232010e-820c-4083-83bb-3ace5fc29d0b",
+    "displayName": "Azure Cosmos DB"
+  },
+  {
+    "appId": "d2a0a418-0aac-4541-82b2-b3142c89da77",
+    "displayName": "Microsoft Operations Management Suite"
+  },
+  {
+    "appId": "918d0db8-4a38-4938-93c1-9313bdfe0272",
+    "displayName": "asmcontainerimagescanner"
+  },
+  {
+    "appId": "e3335adb-5ca0-40dc-b8d3-bedc094e523b",
+    "displayName": "SubscriptionRP"
+  },
+  {
+    "appId": "6037e45d-41a9-4e37-8268-b37791a12f72",
+    "displayName": "AzureCV1"
+  },
+  {
+    "appId": "fc03f97a-9db0-4627-a216-ec98ce54e018",
+    "displayName": "Azure AD Notification"
+  },
+  {
+    "appId": "f5c26e74-f226-4ae8-85f0-b4af0080ac9e",
+    "displayName": "Application Insights API"
+  },
+  {
+    "appId": "486c78bf-a0f7-45f1-92fd-37215929e116",
+    "displayName": "GatewayRP"
+  },
+  {
+    "appId": "aab6257c-e016-4859-a629-5f36a6a8f290",
+    "displayName": "dbmanagedidentity"
+  },
+  {
+    "appId": "69dda2a9-33ca-4ed0-83fb-a9b7b8973ff4",
+    "displayName": "Azure Files"
+  },
+  {
+    "appId": "50d8616b-fd4f-4fac-a1c9-a6a9440d7fe0",
+    "displayName": "OMSAuthorizationServicePROD"
+  },
+  {
+    "appId": "11c174dc-1945-4a9a-a36b-c79a0f246b9b",
+    "displayName": "Azure Monitor System"
+  },
+  {
+    "appId": "bf283ae6-5efd-44a8-b56a-2a7939982d60",
+    "displayName": "Azure Machine Learning Authorization App 2"
+  },
+  {
+    "appId": "9fcb3732-5f52-4135-8c08-9d4bbaf203ea",
+    "displayName": "Microsoft Azure BatchAI"
+  },
+  {
+    "appId": "79d7fb34-4bef-4417-8184-ff713af7a679",
+    "displayName": "Azure Bastion"
+  },
+  {
+    "appId": "36e2398c-9dd3-4f29-9a72-d9f2cfc47ad9",
+    "displayName": "CosmosDB Dedicated Instance"
+  },
+  {
+    "appId": "6d057c82-a784-47ae-8d12-ca7b38cf06b4",
+    "displayName": "AzureVirtualNetworkManager"
+  },
+  {
+    "appId": "1341df96-0b28-43da-ba24-7a6ce39be816",
+    "displayName": "Azure Managed HSM RP"
+  },
+  {
+    "appId": "18a66f5f-dbdf-4c17-9dd7-1634712a9cbe",
+    "displayName": "Azure Machine Learning Services"
+  },
+  {
+    "appId": "0bf30f3b-4a52-48df-9a82-234910c4a086",
+    "displayName": "Microsoft Graph Change Tracking"
+  },
+  {
+    "appId": "a1b76039-a76c-499f-a2dd-846b4cc32627",
+    "displayName": "Azure Key Vault Managed HSM Key Governance Service"
+  },
+  {
+    "appId": "19947cfd-0303-466c-ac3c-fcc19a7a1570",
+    "displayName": "Azure DNS"
+  },
+  {
+    "appId": "a4c95b9e-3994-40cc-8953-5dc66d48348d",
+    "displayName": "Microsoft Container Registry"
+  },
+  {
+    "appId": "562db366-1b96-45d2-aa4a-f2148cef2240",
+    "displayName": "Diagnostic Services Trusted Storage Access"
+  },
+  {
+    "appId": "00000003-0000-0000-c000-000000000000",
+    "displayName": "Microsoft Graph"
+  },
+  {
+    "appId": "b4bddae8-ab25-483e-8670-df09b9f1d0ea",
+    "displayName": "Signup"
+  },
+  {
+    "appId": "707be275-6b9d-4ee7-88f9-c0c2bd646e0f",
+    "displayName": "Dynamic Alerts"
+  },
+  {
+    "appId": "6bb8e274-af5d-4df2-98a3-4fd78b4cafd9",
+    "displayName": "Azure Container Instance Service"
+  },
+  {
+    "appId": "57c0fc58-a83a-41d0-8ae9-08952659bdfd",
+    "displayName": "Azure Cosmos DB Virtual Network To Network Resource Provider"
+  },
+  {
+    "appId": "a3747411-ce7c-4888-9ddc-3a230786ca19",
+    "displayName": "Azure Container Registry - Dataplane"
+  },
+  {
+    "appId": "e95a6071-4f90-4971-84e2-492d9323345b",
+    "displayName": "CosmosDBMongoClusterPrivateEndpoint"
+  },
+  {
+    "appId": "fb9de05a-fecc-4642-b3ca-66b9d4434d4d",
+    "displayName": "Azure Machine Learning Authorization App 1"
+  },
+  {
+    "appId": "80dbdb39-4f33-4799-8b6f-711b5e3e61b6",
+    "displayName": "Billing RP"
+  },
+  {
+    "appId": "3af5a1e8-2459-45cb-8683-bcd6cccbcc13",
+    "displayName": "Azure Smart Alerts"
+  },
+  {
+    "appId": "579d9c9d-4c83-4efc-8124-7eba65ed3356",
+    "displayName": "Azure Compute"
+  },
+  {
+    "appId": "b503eb83-1222-4dcc-b116-b98ed5216e05",
+    "displayName": "Azure Notification Service"
+  },
+  {
+    "appId": "00000002-0000-0000-c000-000000000000",
+    "displayName": "Windows Azure Active Directory"
+  },
+  {
+    "appId": "224a7b82-46c9-4d6b-8db0-7360fb444681",
+    "displayName": "Microsoft Modern Contact Master"
+  },
+  {
+    "appId": "0736f41a-0425-4b46-bdb5-1563eff02385",
+    "displayName": "Azure Machine Learning"
+  },
+  {
+    "appId": "5e5e43d4-54da-4211-86a4-c6e7f3715801",
+    "displayName": "Azure Regional Service Manager"
+  },
+  {
+    "appId": "ef5d5c69-a5df-46bb-acaf-426f161a21a2",
+    "displayName": "Managed Service Identity"
+  },
+  {
+    "appId": "c44b4083-3bb0-49c1-b47d-974e53cbdf3c",
+    "displayName": "Azure Portal"
+  },
+  {
+    "appId": "0000000c-0000-0000-c000-000000000000",
+    "displayName": "Microsoft App Access Panel"
+  },
+  {
+    "appId": "b4ca0290-4e73-4e31-ade0-c82ecfaabf6a",
+    "displayName": "Azure DNS Managed Resolver"
+  },
+  {
+    "appId": "d9327919-6775-4843-9037-3fb0fb0473cb",
+    "displayName": "Databricks Resource Provider"
+  },
+  {
+    "appId": "607ece82-f922-494f-88b8-30effaf12214",
+    "displayName": "Azure Machine Learning Compute"
+  },
+  {
+    "appId": "372140e0-b3b7-4226-8ef9-d57986796201",
+    "displayName": "Azure Windows VM Sign-In"
+  },
+  {
+    "appId": "00000001-0000-0000-c000-000000000000",
+    "displayName": "Azure ESTS Service"
+  },
+  {
+    "appId": "6a0a243c-0886-468a-a4c2-eff52c7445da",
+    "displayName": "Application Insights Configuration Service"
+  },
+  {
+    "appId": "328fd23b-de6e-462c-9433-e207470a5727",
+    "displayName": "NFV Resource Provider"
+  },
+  {
+    "appId": "cfa8b339-82a2-471a-a3c9-0fc0be7a4093",
+    "displayName": "Azure Key Vault"
+  },
+  {
+    "appId": "12743ff8-d3de-49d0-a4ce-6c91a4245ea0",
+    "displayName": "Metrics Monitor API"
+  },
+  {
+    "appId": "509e4652-da8d-478d-a730-e9d4a1996ca4",
+    "displayName": "Azure Resource Graph"
+  },
+  {
+    "appId": "d73f4b35-55c9-48c7-8b10-651f6f2acb2e",
+    "displayName": "MCAPI Authorization Prod"
+  },
+  {
+    "appId": "2ff814a6-3304-4ab8-85cb-cd0e6f879c1d",
+    "displayName": "AzureDatabricks"
+  },
+  {
+    "appId": "ca7f3f0b-7d91-482c-8e09-c5d840d0eac5",
+    "displayName": "Log Analytics API"
+  },
+  {
+    "appId": "01fc33a7-78ba-4d2f-a4b7-768e336e890e",
+    "displayName": "MS-PIM"
+  },
+  {
+    "appId": "dbcbd02a-d7c4-42fb-8c27-b07e5118b848",
+    "displayName": "Azure Graph"
+  },
+  {
+    "appId": "aa9ecb1e-fd53-4aaa-a8fe-7a54de2c1334",
+    "displayName": "Office 365 Configure"
+  },
+  {
+    "appId": "c728155f-7b2a-4502-a08b-b8af9b269319",
+    "displayName": "AAD Request Verification Service - PROD"
+  },
+  {
+    "appId": "a99783bc-5466-4cef-82eb-ebf285d77131",
+    "displayName": "Common Job Provider"
+  },
+  {
+    "appId": "37182072-3c9c-4f6a-a4b3-b3f91cacffce",
+    "displayName": "AzureSupportCenter"
+  }
+]
+aishxaaax@MacBook-Pro azurecv % 
