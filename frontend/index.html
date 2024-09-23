@@ -31,6 +31,33 @@
    ================================================== -->
    <link rel="shortcut icon" href="favicon.png">
 
+   <style>
+       body {
+           background-color: #1f1f1f; /* Slightly brighter */
+           color: #ffffff;
+       }
+
+       h1, h2, h3, p, a {
+           color: #ffffff;
+       }
+
+       .banner-text {
+           background-color: #2a2a2a; /* Lighter background */
+           padding: 20px;
+           border-radius: 10px;
+       }
+
+       .social i {
+           color: #ffffff;
+       }
+
+       footer {
+           background-color: #2a2a2a; /* Lighter footer background */
+           padding: 20px;
+           text-align: center;
+       }
+   </style>
+
 </head>
 
 <body>
@@ -53,10 +80,10 @@
       <div class="row banner">
          <div class="banner-text">
             <h1 class="responsive-headline">Hi, I'm Aisha</h1>
-
-            <p>and this page has been viewed <a id="counter"></a> times </p>
+            <p>This page has been viewed <span id="counter"></span> times</p>
             <ul class="social">
                <li><a href="https://linkedin.com/in/aishasenkubuge"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://github.com/AishaS992"><i class="fa fa-github"></i></a></li> <!-- GitHub added -->
             </ul>
          </div>
       </div>
@@ -87,7 +114,6 @@
       <!-- Experience
       ----------------------------------------------- -->
       <div class="row work">
-
          <div class="three columns header-col">
             <h1><span>Experience</span></h1>
          </div>
@@ -131,7 +157,6 @@
                <div class="twelve columns">
                   <h3>Certifications</h3>
                   <p class="info">Microsoft Azure Fundamentals (AZ-900) <span>&bull;</span> <em class="date">Sat in July 2024</em></p>
-                  <!-- Add icons here for certifications if needed -->
                </div>
             </div> <!-- item end -->
          </div> <!-- main-col end -->
@@ -146,14 +171,21 @@
          <div class="twelve columns">
             <ul class="social-links">
                <li><a href="https://linkedin.com/in/aishasenkubuge"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://github.com/AishaS992"><i class="fa fa-github"></i></a></li> <!-- GitHub added -->
             </ul>
          </div>
          <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
       </div>
    </footer> <!-- Footer End-->
 
-   <!-- Java Script
+   <!-- Java Script for Visitor Counter
    ================================================== -->
+   <script>
+      // Assuming you have a counter API or backend service to get page views
+      // Replace with your API endpoint or logic for counting views
+      document.getElementById('counter').textContent = '123'; // Replace with actual page view count logic
+   </script>
+
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
    <script src="js/jquery.flexslider.js"></script>
