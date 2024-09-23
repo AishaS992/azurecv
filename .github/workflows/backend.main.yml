@@ -46,7 +46,7 @@ jobs:
 
       - name: 'Set CosmosDB Connection String'
         run: |
-          echo "AZURE_COSMOSDB_CONNECTION_STRING=${{ secrets.AZURE_COSMOSDB_CONNECTION_STRING }}" >> $GITHUB_ENV
+          echo "AZURE_COSMOSDB_CONNECTION_STRING=\"${{ secrets.AZURE_COSMOSDB_CONNECTION_STRING }}\"" >> $GITHUB_ENV
     
             
       - name: 'Deploy Azure Functions App'
