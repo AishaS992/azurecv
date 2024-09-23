@@ -7,7 +7,7 @@ on:
     - 'backend/**'
 
 env:
-  AZURE_FUNCTIONAPP_NAME: GetCVCounter  # Set this to your Azure Function App name
+  AZURE_FUNCTIONAPP_NAME: GetCVCounter1  # Set this to your Azure Function App name
   AZURE_FUNCTIONAPP_PACKAGE_PATH: 'backend/api'   # Path to your Azure Function App project
   DOTNET_VERSION: '6.0.x'  # Set this to the .NET version you're using
 
