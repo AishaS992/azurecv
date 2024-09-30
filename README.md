@@ -1,6 +1,6 @@
 ## Project Overview
 
-This repository contains my personal CV website, built and deployed using Azure services, follwing [ACG project video.](https://www.youtube.com/watch?v=ieYrBWmkfno&t=470s). It demonstrates my skills in **cloud technologies**, **CI/CD pipelines**, **backend integration**, and **static web hosting**. This project serves as a showcase of my proficiency in Azure and web development.
+This repository contains my personal CV website, built and deployed using Azure services, follwing [ACG project video.](https://www.youtube.com/watch?v=ieYrBWmkfno&t=470s) It demonstrates my skills in **cloud technologies**, **CI/CD pipelines**, **backend integration**, and **static web hosting**. This project serves as a showcase of my proficiency in Azure and web development.
 
 ## Features
 
